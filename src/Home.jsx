@@ -7,57 +7,18 @@ import Booknow from "./component/button/Booknow";
 import Card from "./component/card/Card";
 import Footer from "./component/footer/Footer";
 
+import { content, content2, content3, surveillance } from "../utlis/data";
+
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const content = [
-    { heading: "Lorem ipsum", dep: "Lorem ipsum dolor sit amet consec." },
-    { heading: "Dolor sit", dep: "Dolor sit amet consectetuer." },
-    { heading: "Consectetur", dep: "Consectetur adipiscing elit." },
-    { heading: "Adipiscing", dep: "Adipiscing elit, sed do eiusmod." },
-    { heading: "Elit sed", dep: "Elit sed do eiusmod tempor." },
-  ];
-  const content2 = [
-    { heading: "Lorem ipsum", dep: "Lorem ipsum dolor sit amet consec." },
-    { heading: "Dolor sit", dep: "Dolor sit amet consectetuer." },
-    { heading: "Consectetur", dep: "Consectetur adipiscing elit." },
-  ];
-  const content3 = [
-    { heading: "Lorem ipsum", dep: "Lorem ipsum dolor sit amet consec." },
-    { heading: "Dolor sit", dep: "Dolor sit amet consectetuer." },
-    { heading: "Consectetur", dep: "Consectetur adipiscing elit." },
-    { heading: "Adipiscing", dep: "Adipiscing elit, sed do eiusmod." },
-    { heading: "Elit sed", dep: "Elit sed do eiusmod tempor." },
-    { heading: "Consectetur", dep: "Consectetur adipiscing elit." },
-  ];
-
-  const surveillance = [
-    {
-      img: "https://img.tatacliq.com/images/i18//1348Wx2000H/MP000000022922503_1348Wx2000H_202407161715016.jpeg",
-      title: "Lorem ipsum",
-      mrp: " 500",
-      price: "22499",
-      offerice: "49%",
-    },
-    {
-      img: "https://img.tatacliq.com/images/i18//1348Wx2000H/MP000000022922503_1348Wx2000H_202407161715016.jpeg",
-      title: "Lorem ipsum",
-      mrp: " 500",
-      price: "22499",
-      offerice: "49%",
-    },
-    {
-      img: "https://img.tatacliq.com/images/i18//1348Wx2000H/MP000000022922503_1348Wx2000H_202407161715016.jpeg",
-      title: "Lorem ipsum",
-      mrp: " 500",
-      price: "22499",
-      offerice: "49%",
-    },
-  ];
   return (
     <div>
-      <Header />
-      <Banner />
+      <section>
+        <Header />
+        <Banner />
+      </section>
+
       <section className="grid lg:grid-cols-5  max-sm:grid-cols-2 md:grid-cols-4 lg:h-[20rem] max-sm:h-[50rem] gap-3 lg:px-16 py-3">
         {content.map((item, idx) => (
           <Card key={idx} content={item} isdep={true} />
@@ -68,12 +29,12 @@ const Home = () => {
         <p className="text-center font-bold text-2xl">
           Smart surveillance systems for your home and business.
         </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-3 max-sm:grid-cols-1 h-[25rem] gap-10  lg:px-16 mt-16 text-center">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 max-sm:grid-cols-1 h-[25rem] lg:gap-10 md:gap-1.5  lg:px-16 mt-16 text-center">
           {surveillance.map((item, idx) => {
             return (
               <div className="bg-[#F3F3F3] rounded-4xl flex flex-col justify-center items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                 <img
-                  className="lg:w-96 w-72 md:w-56 h-64 rounded-md transition-transform duration-300 hover:scale-110"
+                  className="lg:w-96 w-72 md:w-56 h-64 max-sm:h-56 rounded-md transition-transform duration-300 md:hover:scale-110 "
                   src={item.img}
                   alt=""
                 />
@@ -90,7 +51,11 @@ const Home = () => {
           })}
         </div>
         <div className="w-full h-56 flex justify-center items-center gap-3 max-sm:absolute bottom-0">
-          <CustomButton className={"bg-[#0000B5] text-white hover:bg-white hover:text-black"}>
+          <CustomButton
+            className={
+              "bg-[#0000B5] text-white hover:bg-white hover:text-black"
+            }
+          >
             Explore products
           </CustomButton>
           <CustomButton className={"border-[#0000B5]"}>
@@ -125,7 +90,7 @@ const Home = () => {
 
             <div className="grid lg:grid-cols-4 md:grid-cols-3  max-sm:grid-cols-2 gap-3 mt-10">
               {content2.map((item, idx) => (
-                <Card key={idx} content={item} className={'h-28 lg:mt-8'}/>
+                <Card key={idx} content={item} className={"h-28 lg:mt-8"} />
               ))}
             </div>
           </div>
@@ -160,7 +125,7 @@ const Home = () => {
         </div>
         <div className="col-span-12 lg:col-span-10 grid md:grid-cols-3 max-sm:grid-cols-2 lg:grid-cols-3 gap-4 max-sm:gap-1 max-sm:p-0  px-5">
           {content3.map((item, idx) => (
-            <Card key={idx} content={item} isdep={true}/>
+            <Card key={idx} content={item} isdep={true} />
           ))}
         </div>
       </section>
